@@ -11,7 +11,8 @@ let y = 50 + Math.random() * 300; // start y mellan 50 och 350
 
 let speedX = 4 + Math.random(); // mellan 4 och 5
 let speedY = (2 + Math.random()) * (Math.round(Math.random()) * 2 - 1); // positivt eller negativt mellan 2 och 3
-console.log("X: " + speedX + "Y: " + speedY);
+console.log("Speed X: " + Math.abs(speedX.toFixed(2)));
+console.log("Speed Y: " + Math.abs(speedY.toFixed(2)));
 
 let yPos = 160; // position pinne
 let points = 0; // poäng
@@ -51,13 +52,14 @@ function game() {
   if (x > canvas.width + radius) {
     ctx.font = "bold 30pt arial";
     ctx.fillStyle = "red";
-    ctx.fillText("Game Over!" + points + " points", 80, 200);
+    ctx.fillText("Game Over! " + points + " points", 80, 200);
   }
   //pinne
   if (x >= 590 && x < 595 && y > yPos - 5 && y < yPos + 85) {
     speedX = -(speedX + Math.random() - 0.3); // hastighet -0.3 - +0.7
     speedY = speedY + Math.random() - 0.3; // hastighet -0.3 - +0.7
-    console.log("X: " + speedX + "Y: " + speedY);
+    console.log("Speed X: " + Math.abs(speedX.toFixed(2)));
+    console.log("Speed Y: " + Math.abs(speedY.toFixed(2)));
   }
 
   requestAnimationFrame(game);
