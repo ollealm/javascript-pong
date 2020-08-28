@@ -1,1 +1,3 @@
-# javascript-pong
+# Pong
+
+JavaScript game using Canvas
