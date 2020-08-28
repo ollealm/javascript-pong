@@ -6,12 +6,12 @@ canvas.style.backgroundColor = "black";
 
 const radius = 10; //boll
 
-let x = 50; // start x 
+let x = 50; // start x
 let y = 50 + Math.random() * 300; // start y mellan 50 och 350
 
 let speedX = 4 + Math.random(); // mellan 4 och 5
 let speedY = (2 + Math.random()) * (Math.round(Math.random()) * 2 - 1); // positivt eller negativt mellan 2 och 3
-console.log("X: " + speedX + "Y: " + speedY)
+console.log("X: " + speedX + "Y: " + speedY);
 
 let yPos = 160; // position pinne
 let points = 0; // poäng
@@ -39,7 +39,7 @@ function game() {
   if (x <= radius) {
     speedX = -speedX;
     points++;
-    console.log("Poäng: " + points)
+    console.log("Points: " + points);
   }
 
   // topp och botten
@@ -51,20 +51,20 @@ function game() {
   if (x > canvas.width + radius) {
     ctx.font = "bold 30pt arial";
     ctx.fillStyle = "red";
-    ctx.fillText("Game Over – " + points + " poäng", 80, 200);
+    ctx.fillText("Game Over!" + points + " points", 80, 200);
   }
   //pinne
   if (x >= 590 && x < 595 && y > yPos - 5 && y < yPos + 85) {
-    speedX = -(speedX + Math.random() - 0.5); // hastighet ±0.5
-    speedY = speedY + Math.random() - 0.5; // hastighet ±0.5
-    console.log("X: " + speedX + "Y: " + speedY)
+    speedX = -(speedX + Math.random() - 0.3); // hastighet -0.3 - +0.7
+    speedY = speedY + Math.random() - 0.3; // hastighet -0.3 - +0.7
+    console.log("X: " + speedX + "Y: " + speedY);
   }
 
   requestAnimationFrame(game);
 }
 game();
 
-// input 
+// input
 let arrow = window.addEventListener(
   "keydown",
   function () {
